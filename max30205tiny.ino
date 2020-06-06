@@ -5,7 +5,7 @@ Libs Used:
 ClosedCube's MAX30205 lib
 TinyWire by brohogan
 
-Brad Hutson Jr
+-Brad Hutson Jr
 
 This Code is based on hardware config as follows:
 ATtiny85 + Max30205 Config
