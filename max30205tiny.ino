@@ -25,8 +25,8 @@ int GreenLed = 3;
 
 void setup()
 {
- // Serial.begin(115200); // Disabled because this needs softserial to (barely) work or device hard locks
- // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to (barely) work or device hard locks
+ // Serial.begin(115200); // Disabled because this needs softserial to work or device hard locks
+ // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to work or device hard locks
  
   pinMode(GreenLed, OUTPUT); // Set Green LED State
   pinMode(RedLed, OUTPUT); // Set Red LED State
