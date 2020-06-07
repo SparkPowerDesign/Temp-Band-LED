@@ -5,3 +5,5 @@ The included lib from ClosedCube for the MAX30205 includes minor changes to be c
 
 Written in C and for use with the Aurdino IDE.
 
+Please Note:
+The readings from the MAX30205 are subject to skin contact placment and duration with the human body. Thresholds for LED states based on readings will need to be tweaked in the code to get an accurate LED indication of normal/fever body temp.
