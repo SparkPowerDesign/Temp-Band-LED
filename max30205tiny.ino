@@ -7,8 +7,8 @@ TinyWire by brohogan
 
 Brad Hutson Jr
 
-This Code is based on hardware config as follows:
-ATtiny85 + Max30205 Config
+This Code is based on a hardware config as follows:
+ATtiny85 + Max30205
 
 **************************************************************************************/
 
@@ -25,8 +25,8 @@ int GreenLed = 3;
 
 void setup()
 {
- // Serial.begin(115200); // Disabled because this needs softserial to (barely) work or device hard locks
- // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to (barely) work or device hard locks
+ // Serial.begin(9600); // Disabled because this needs softserial to (barely) work or device hard locks.
+ // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to work.
  
   pinMode(GreenLed, OUTPUT); // Set Green LED State
   pinMode(RedLed, OUTPUT); // Set Red LED State
@@ -39,7 +39,14 @@ void loop()
 float temp = max30205.readTemperature(); // Assign a float value to the reading from MAX30205 in Celsius
 
 
-if (temp > 36) // Body temp (in c) fever Threshold (Needs tweaking)
+///
+// The following if statments are sloppy and a rush job for testing, please forgive. 
+// Also the MAX30205 although being clinicly rated for body temp, doesnt read temps. exactly because of body placment and the placment of the chip itself on the pcb its mounted to. 
+// This is why the temp in C for the code below doesnt match up with actual body temp thresholds for normal/fever. Needs tweaking/expermination on placment.
+///
+
+
+if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   {
 
    digitalWrite(RedLed, HIGH);
@@ -47,12 +54,8 @@ if (temp > 36) // Body temp (in c) fever Threshold (Needs tweaking)
   }
 
 
-///
-// The following if statments are sloppy and a rush job for testing, please forgive.
-///
 
-
-if (temp < 31) // Body temp (in c) is outside normal metrics, means the device is not actually worn. (Needs tweaking)
+if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally means the device is not actually being worn. (Needs tweaking)
 
   {
 
@@ -68,7 +71,7 @@ if (temp < 31) // Body temp (in c) is outside normal metrics, means the device i
 
 
 
-if(temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Needs tweaking)
+if(temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Normal body temp is approx 37c. This needs tweaking based on placment/implementation)
 
   {
     
@@ -82,8 +85,8 @@ if(temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Needs tw
 
   delay(300);
 
- // Serial.print("T="); // Disabled because this needs softserial to work or device hard locks
- // Serial.print(max30205.readTemperature()); // Disabled because this needs softserial to work or device hard locks
- // Serial.println("C"); // Disabled because this needs softserial to work or device hard locks
+ // Serial.print("T="); // Disabled because this needs softserial to work or device hard locks.
+ // Serial.print(max30205.readTemperature()); // Disabled because this needs softserial to work or device hard locks.
+ // Serial.println("C"); // Disabled because this needs softserial to work or device hard locks.
 
 }
