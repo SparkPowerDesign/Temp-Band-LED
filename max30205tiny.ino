@@ -51,7 +51,8 @@ float temp = max30205.readTemperature(); // Assign a float value to the reading 
 if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   {
     
- // Illumnate Greed RED LED Only
+ // Illumnate Greed RED LED Only (Fever reading)
+ 
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, LOW);
   }
@@ -62,7 +63,7 @@ if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally
 
   {
 
- // Illuminate both LEDs to make orange
+ // Illuminate both LEDs to make orange (Reading in progress, outside human body temp)
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, HIGH);
    
@@ -78,7 +79,7 @@ if(temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Normal b
 
   {
     
-  // Illumnate Greed LED Only
+  // Illumnate Green LED Only (Normal body temp)
 
    digitalWrite(GreenLed, HIGH);
    digitalWrite(RedLed, LOW);
