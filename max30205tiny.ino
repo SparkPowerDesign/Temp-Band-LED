@@ -59,11 +59,11 @@ if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
 
 
 
-if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally means the device is not actually being worn. (Needs tweaking)
+if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally means the device is not actually being worn. (This needs tweaking based on placment/implementation))
 
   {
 
- // Illuminate both LEDs to make orange (Reading in progress, outside human body temp)
+ // Illuminate both LEDs to make orange and blink. (Reading is in progress, outside human body temp. This needs tweaking based on placment/implementation))
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, HIGH);
    
