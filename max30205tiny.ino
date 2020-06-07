@@ -51,7 +51,7 @@ float temp = max30205.readTemperature(); // Assign a float value to the reading 
 if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   {
     
- // Illumnate Greed RED LED Only (Fever reading)
+ // Illumnate Green RED LED Only (Fever reading)
  
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, LOW);
