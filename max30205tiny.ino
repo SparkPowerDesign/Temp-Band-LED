@@ -45,7 +45,7 @@ float temp = max30205.readTemperature(); // Assign a float value to the reading 
 // The MAX30205 although being clinicly rated for body temp, doesnt read temps
 // exactly because of body placment and the placment of the chip itself on the pcb its mounted to. 
 // This is why the temp in C for the code below doesnt match up with actual body temp thresholds for normal/fever. 
-// Needs tweaking/expermination on placment.
+// Needs tweaking/expermination on placement.
 ///////
 
 
@@ -59,11 +59,11 @@ if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   }
 
 
-else if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally means the device is not actually being worn. (This needs tweaking based on placment/implementation)
+else if (temp < 31) // Body temp (in c) is outside normal body temp metrics, probally means the device is not actually being worn. (This needs tweaking based on placement/implementation)
 
   {
 
- // Illuminate both LEDs to make orange and blink. (Reading is in progress, outside human body temp. This needs tweaking based on placment/implementation))
+ // Illuminate both LEDs to make orange and blink. (Reading is in progress, outside human body temp. This needs tweaking based on placement/implementation))
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, HIGH);
    
@@ -74,7 +74,7 @@ else if (temp < 31) // Body temp (in c) is outside normal body temp metrics, pro
   }
 
 
-  else if(temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Normal body temp is approx 37c. This needs tweaking based on placment/implementation)
+  else if (temp > 32 && temp <36) // Body temp (in c) is inside normal metrics (Normal body temp is approx 37c. This needs tweaking based on placement/implementation)
   {
   // Illumnate Green LED Only (Normal body temp)
 
