@@ -5,7 +5,7 @@ Libs Used:
 ClosedCube's MAX30205 lib
 TinyWire by brohogan
 
--Brad Hutson Jr
+Brad Hutson Jr
 
 This Code is based on hardware config as follows:
 ATtiny85 + Max30205 Config
@@ -25,8 +25,8 @@ int GreenLed = 3;
 
 void setup()
 {
- // Serial.begin(115200); // Disabled because this needs softserial to work or device hard locks
- // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to work or device hard locks
+ // Serial.begin(115200); // Disabled because this needs softserial to (barely) work or device hard locks
+ // Serial.println("Body Temp Monitor Band Debug");  // Disabled because this needs softserial to (barely) work or device hard locks
  
   pinMode(GreenLed, OUTPUT); // Set Green LED State
   pinMode(RedLed, OUTPUT); // Set Red LED State
@@ -45,6 +45,11 @@ if (temp > 36) // Body temp (in c) fever Threshold (Needs tweaking)
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, LOW);
   }
+
+
+///
+// The following if statments are sloppy and a rush job for testing, please forgive.
+///
 
 
 if (temp < 31) // Body temp (in c) is outside normal metrics, means the device is not actually worn. (Needs tweaking)
