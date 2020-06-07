@@ -41,14 +41,17 @@ float temp = max30205.readTemperature(); // Assign a float value to the reading 
 
 ///
 // The following if statments are sloppy and a rush job for testing, please forgive. 
-// Also the MAX30205 although being clinicly rated for body temp, doesnt read temps. exactly because of body placment and the placment of the chip itself on the pcb its mounted to. 
-// This is why the temp in C for the code below doesnt match up with actual body temp thresholds for normal/fever. Needs tweaking/expermination on placment.
+// Also the MAX30205 although being clinicly rated for body temp, doesnt read temps. 
+// exactly because of body placment and the placment of the chip itself on the pcb its mounted to. 
+// This is why the temp in C for the code below doesnt match up with actual body temp thresholds for normal/fever. 
+// Needs tweaking/expermination on placment.
 ///
 
 
 if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   {
-
+    
+ // Illumnate Greed RED LED Only
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, LOW);
   }
