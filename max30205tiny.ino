@@ -12,7 +12,7 @@ ATtiny85 + Max30205
 
 **************************************************************************************/
 
-#include <TinyWireM.h> // Wire lib for ATtiny devices and compatibles
+#include <TinyWireM.h> // Wire i2c lib for ATtiny devices and compatibles
 #include "ClosedCube_MAX30205.h" // Included lib is a modified version of ClosedCube's lib which has been changed to use the TinyWireM instead of Wire for i2c comms.
 
 ClosedCube_MAX30205 max30205; // Init
@@ -51,7 +51,7 @@ float temp = max30205.readTemperature(); // Assign a float value to the reading 
 if (temp > 36) // Body temp (in c) for our fever Threshold (Needs tweaking)
   {
     
- // Illumnate Green RED LED Only (Fever reading)
+ // Illumnate RED LED Only (Fever reading)
  
    digitalWrite(RedLed, HIGH);
    digitalWrite(GreenLed, LOW);
