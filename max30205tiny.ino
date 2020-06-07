@@ -10,6 +10,8 @@ Brad Hutson Jr
 This Code is based on a hardware config as follows:
 ATtiny85 + Max30205
 
+The MAX30205 is connected to the i2c uinterface pins 7 and 5 on the ATtiny85 (or 2 and 0 as the Arudino IDE recognizes them)
+
 **************************************************************************************/
 
 #include <TinyWireM.h> // Wire i2c lib for ATtiny devices and compatibles
